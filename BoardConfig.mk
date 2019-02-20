@@ -15,14 +15,11 @@
 #
 
 # Include n80xx BoardConfigCommon
--include device/samsung/n80xx-common/BoardConfigCommon.mk
+-include device/samsung/p4notelte-common/BoardConfigCommon.mk
 
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
 TARGET_KERNEL_CONFIG := lineageos_n8020_defconfig
-
-#Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/n8020/bluetooth
 
 # assert
 TARGET_OTA_ASSERT_DEVICE := c0,p4notelte,p4noteltexx,n8020,GT-N8020

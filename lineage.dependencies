@@ -12,8 +12,8 @@
         "target_path": "kernel/samsung/smdk4412"
     },
     {
-        "repository": "android_device_samsung_n80xx-common",
-        "target_path": "device/samsung/n80xx-common"
+        "repository": "android_device_samsung_p4notelte-common",
+        "target_path": "device/samsung/p4notelte-common"
     },
     {
         "repository": "android_packages_apps_SamsungServiceMode",

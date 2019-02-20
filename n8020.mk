@@ -14,11 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/samsung/n80xx-common/n80xx-common.mk)
-
-$(call inherit-product, device/samsung/smdk4412-qcom-common/common.mk)
-
-$(call inherit-product-if-exists, vendor/samsung/p4notelte/p4notelte-vendor.mk)
+$(call inherit-product, device/samsung/p4notelte-common/p4notelte-common.mk)
 
 LOCAL_PATH := device/samsung/n8020
 
@@ -28,23 +24,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_COPY_FILES += \
     device/samsung/n8020/rootdir/init.target.rc:root/init.target.rc
 
-# Gps
-PRODUCT_COPY_FILES += \
-    device/samsung/n8020/configs/gps.xml:system/etc/gps.xml
-
-# These are the hardware-specific features
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
-
 # RIL
-PRODUCT_PROPERTY_OVERRIDES += \
-    mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
-    ro.ril.hsxpa=1 \
-    ro.ril.gprsclass=10
-
 PRODUCT_PACKAGES += \
 	libsecril-client-sap \
 	SamsungServiceMode
+
+$(call inherit-product-if-exists, vendor/samsung/n8020/n8020-vendor.mk)
