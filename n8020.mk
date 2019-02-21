@@ -24,9 +24,4 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_COPY_FILES += \
     device/samsung/n8020/rootdir/init.target.rc:root/init.target.rc
 
-# RIL
-PRODUCT_PACKAGES += \
-	libsecril-client-sap \
-	SamsungServiceMode
-
 $(call inherit-product-if-exists, vendor/samsung/n8020/n8020-vendor.mk)
